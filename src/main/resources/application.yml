@@ -9,8 +9,10 @@ spring:
         git:
           timeout: 10
           uri: ${config_git_url}
+          default-label: main
+          ignoreLocalSshSettings: true
           search-paths:
             - commons
           # gerar com o comando: ssh-keygen -m PEM -t rsa -b 4096
-          private-key-file: ${config_private_key}
+          privateKey: ${config_private_key}
 
