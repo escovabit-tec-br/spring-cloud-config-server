@@ -1,0 +1,16 @@
+spring:
+  security:
+    user:
+      name: ${config_username}
+      password: ${config_password}
+  cloud:
+    config:
+      server:
+        git:
+          timeout: 10
+          uri: ${config_git_url}
+          search-paths:
+            - commons
+          # gerar com o comando: ssh-keygen -m PEM -t rsa -b 4096
+          private-key-file: ${config_private_key}
+
