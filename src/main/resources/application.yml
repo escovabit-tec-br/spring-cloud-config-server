@@ -16,3 +16,16 @@ spring:
           # gerar com o comando: ssh-keygen -m PEM -t rsa -b 4096
           privateKey: ${config_private_key}
 
+# Configuração do actuator para mostrar detalhes
+management:
+  security:
+    enabled: false
+  endpoint:
+    health:
+      show-details: "always"
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
