@@ -19,6 +19,7 @@ spring:
 # Configuração do actuator para mostrar detalhes
 management:
   security:
+    # * Desliga a validação de segurança para as urls do Actuator
     enabled: false
   endpoint:
     health:
