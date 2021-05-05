@@ -12,7 +12,8 @@ spring:
           default-label: main
           ignoreLocalSshSettings: true
           search-paths:
-            - commons
+            - commons # Permite ter um diretorio chamando commons para ler aquivos de configurações
+            - '{application}' # Permite ler arquivos separados em direotiros para cada aplicação
           # gerar com o comando: ssh-keygen -m PEM -t rsa -b 4096
           privateKey: ${config_private_key}
 
