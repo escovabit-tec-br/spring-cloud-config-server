@@ -3,6 +3,8 @@ spring:
     user:
       name: ${config_username}
       password: ${config_password}
+      roles:
+       - 'ACTUATOR_ADMIN'
   cloud:
     config:
       server:
@@ -19,13 +21,12 @@ spring:
 
 # Configuração do actuator para mostrar detalhes
 management:
-  security:
-    # * Desliga a validação de segurança para as urls do Actuator
-    enabled: false
   endpoint:
     health:
       show-details: "always"
   endpoints:
+    metrics:
+      sensitive: false
     web:
       exposure:
         include: "*"
